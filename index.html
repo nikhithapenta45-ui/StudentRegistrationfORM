@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for character encoding and responsive design -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Student Registration System - Add, edit, delete student records with data persistence." />
+  <meta name="keywords" content="student, registration, system, form" />
+  <meta name="author" content="Student Assignment" />
+  
+  <!-- Page Title -->
+  <title>Student Registration System | Manage Student Records</title>
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header Section - Task 2: Header (5 Marks) -->
+  <header class="site-header">
+    <div class="header-content">
+      <h1 class="main-title">📚 Student Registration System</h1>
+      <p class="description">Efficiently manage student records with our comprehensive registration system. Add, edit, delete, and view student information in real-time with automatic data persistence.</p>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="container">
+    <!-- Form Section - Task 3: Form and Input Fields (5 Marks) -->
+    <section class="form-section">
+      <h2 class="section-title">Register New Student</h2>
+      
+      <!-- Student Registration Form -->
+      <form id="student-form" class="form-container">
+        <!-- Student Name Input -->
+        <div class="form-group">
+          <label for="name" class="form-label">Student Name <span class="required">*</span></label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            class="form-input" 
+            placeholder="Enter full name (letters only)"
+            required 
+            autocomplete="off"
+          />
+          <span class="error-message" id="name-error"></span>
+        </div>
+
+        <!-- Student ID Input -->
+        <div class="form-group">
+          <label for="studentId" class="form-label">Student ID <span class="required">*</span></label>
+          <input 
+            type="text" 
+            id="studentId" 
+            name="studentId" 
+            class="form-input" 
+            placeholder="Enter student ID (numbers only)"
+            required 
+            autocomplete="off"
+          />
+          <span class="error-message" id="studentId-error"></span>
+        </div>
+
+        <!-- Email ID Input -->
+        <div class="form-group">
+          <label for="email" class="form-label">Email ID <span class="required">*</span></label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            class="form-input" 
+            placeholder="Enter valid email address"
+            required 
+            autocomplete="off"
+          />
+          <span class="error-message" id="email-error"></span>
+        </div>
+
+        <!-- Contact Number Input -->
+        <div class="form-group">
+          <label for="contact" class="form-label">Contact Number <span class="required">*</span></label>
+          <input 
+            type="text" 
+            id="contact" 
+            name="contact" 
+            class="form-input" 
+            placeholder="Enter 10-digit contact number"
+            required 
+            autocomplete="off"
+          />
+          <span class="error-message" id="contact-error"></span>
+        </div>
+
+        <!-- Form Action Buttons -->
+        <div class="form-actions">
+          <button type="submit" id="submit-btn" class="btn btn-primary">Add Student</button>
+          <button type="reset" id="reset-btn" class="btn btn-secondary">Clear Form</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Display Section - Task 4: Display Section (15 Marks) -->
+    <section class="display-section">
+      <h2 class="section-title">Registered Students</h2>
+      
+      <!-- Count of Students -->
+      <div class="student-count">
+        <p>Total Students: <strong id="student-count">0</strong></p>
+      </div>
+
+      <!-- Table Wrapper with Dynamic Scrollbar (Task 6: Dynamic scrollbar) -->
+      <div id="table-wrapper" class="table-wrapper">
+        <!-- Student Records Table -->
+        <table id="students-table" class="students-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Student ID</th>
+              <th>Email</th>
+              <th>Contact No.</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="students-body">
+            <!-- Student rows dynamically inserted by JavaScript -->
+          </tbody>
+        </table>
+        
+        <!-- Empty State Message -->
+        <div id="empty-message" class="empty-state">
+          <p>No students registered yet. Add a student using the form to get started.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Student Registration System | Assignment Submission</p>
+  </footer>
+
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
